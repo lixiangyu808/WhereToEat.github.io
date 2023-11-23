@@ -1,0 +1,51 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>去吃啥</title>  
+    <style>  
+        #result {  
+            font-size: 100px;  
+            text-align: center;  
+        }  
+        #button {  
+            font-size: 200%;  
+            display: block;  
+            margin: auto;  
+        }  
+        input[type="checkbox"] {  
+            transform: scale(1);  
+        }    
+    </style>  
+
+    <script type="text/javascript">  
+        function showChecked() {  
+            var checkboxes = document.getElementsByName('checkbox');   
+            var checkedItems = []; 
+            for (var i = 0; i < checkboxes.length; i++) {  
+                if (checkboxes[i].checked) {  
+                    checkedItems.push(checkboxes[i].value);  
+                }  
+            }  
+            randomOption = checkedItems[Math.floor(Math.random() * checkedItems.length)]
+            document.getElementById('result').innerHTML = '吃饭了:' + randomOption;  
+        }  
+    </script>  
+</head>  
+<body>  
+    <h2>勾选备选恰饭选项：</h2>  
+    <input id="input" type="checkbox" name="checkbox" value="伊穆阿里"checked> 伊穆阿里<br>  
+    <input id="input" type="checkbox" name="checkbox" value="美意天"checked> 美意天<br>  
+    <input id="input" type="checkbox" name="checkbox" value="驴肉火烧"checked> 驴肉火烧<br>  
+    <input id="input" type="checkbox" name="checkbox" value="好这口"checked> 好这口<br>  
+    <input id="input" type="checkbox" name="checkbox" value="满座儿"checked> 满座儿<br> 
+    <input id="input" type="checkbox" name="checkbox" value="螺蛳粉先生"checked> 螺蛳粉先生<br> 
+    <input id="input" type="checkbox" name="checkbox" value="张亮麻辣烫"checked> 张亮麻辣烫<br> 
+    <input id="input" type="checkbox" name="checkbox" value="张拉拉"checked> 张拉拉<br>  
+    <input id="input" type="checkbox" name="checkbox" value="老乡鸡"checked> 老乡鸡<br>  
+    <input id="input" type="checkbox" name="checkbox" value="物理所"> 物理所<br> 
+    <input id="input" type="checkbox" name="checkbox" value="老街串串"> 老街串串<br> 
+    <input id="input" type="checkbox" name="checkbox" value="食堂"checked> 食堂<br>
+    <button id="button" onclick="showChecked()">确定</button>  
+    <p id="result"></p>  
+</body>  
+</html>
